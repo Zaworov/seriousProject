@@ -1,9 +1,8 @@
-import javax.enterprise.inject.Any;
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 public class MessagePrinter {
 
-    @Inject
+    @Inject @FileMessage
     private MessageProducer messageProducer;
 
     public void printMessage() {
