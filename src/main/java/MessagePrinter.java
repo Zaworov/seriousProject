@@ -2,8 +2,12 @@ import jakarta.inject.Inject;
 
 public class MessagePrinter {
 
-    @Inject @FileMessage
     private MessageProducer messageProducer;
+
+    @Inject
+    public MessagePrinter(@Message(type= Message.MessageType.FILE) MessageProducer messageProducer) {
+        this.messageProducer = messageProducer;
+    }
 
     public void printMessage() {
         String message = messageProducer.getMessage();

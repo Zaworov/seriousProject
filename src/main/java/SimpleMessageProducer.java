@@ -1,8 +1,7 @@
 import jakarta.enterprise.inject.Any;
 import jakarta.enterprise.inject.Default;
 
-@Default
-@Any
+@Message
 public class SimpleMessageProducer implements MessageProducer {
 
     @Override

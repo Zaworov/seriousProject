@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-@FileMessage
+@Message(type= Message.MessageType.FILE)
 public class FileMessageProducer implements MessageProducer {
 
     @Override
