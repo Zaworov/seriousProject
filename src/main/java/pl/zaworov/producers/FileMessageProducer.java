@@ -1,5 +1,7 @@
 package pl.zaworov.producers;
 
+import jakarta.inject.Inject;
+import pl.zaworov.qualifiers.FileName;
 import pl.zaworov.qualifiers.Message;
 
 import java.io.File;
@@ -12,17 +14,20 @@ import java.util.List;
 @Message(type = Message.MessageType.FILE)
 public class FileMessageProducer implements MessageProducer {
 
+    @Inject @FileName
+    private String fileName;
+
     @Override
     public String getMessage() {
         List<String> lines = null;
         try {
-            Path path = new File(getClass().getResource("/message.txt").toURI()).toPath();
+            Path path = new File(getClass().getResource(fileName).toURI()).toPath();
             lines = Files.readAllLines(path);
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
         }
         String result = "";
-        if(lines != null)
+        if (lines != null)
             result = lines.stream().reduce(result, (a, b) -> a + b);
         return result;
     }
