@@ -1,4 +1,4 @@
-package pl.zaworov.producers;
+package pl.zaworov.model;
 
 public interface MessageProducer {
 

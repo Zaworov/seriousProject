@@ -1,8 +1,8 @@
-package pl.zaworov;
+package pl.zaworov.main;
 
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
-import pl.zaworov.printers.MessagePrinter;
+import pl.zaworov.model.MessagePrinter;
 
 public class Main {
     public static void main(String[] args) {
