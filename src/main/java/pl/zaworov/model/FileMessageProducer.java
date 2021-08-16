@@ -1,8 +1,9 @@
-package pl.zaworov.producers;
+package pl.zaworov.model;
 
 import jakarta.inject.Inject;
 import pl.zaworov.qualifiers.FileName;
 import pl.zaworov.qualifiers.Message;
+import pl.zaworov.qualifiers.Message.MessageType;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-@Message(type = Message.MessageType.FILE)
+@Message(type = MessageType.FILE)
 public class FileMessageProducer implements MessageProducer {
 
     @Inject @FileName
